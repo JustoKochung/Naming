@@ -1,8 +1,8 @@
-var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-var maleAkanNames = {Sunday: "Kwasi", Monday: "Kwadwo", Tuesday: "Kwabena", Wednesday: "Kwaku", Thurday: "Yaw", Friday: "Kofi", Saturday: "Kwame"};
-var femaleAkanNames = {Sunday: "Akosua", Monday: "Adwoa", Tuesday: "Abenaa", Wednesday: "Akua", Thurday: "Yaa", Friday: "Afua", Saturday: "Ama"};
+var daysArr = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var akanM = {Sunday: "Kwasi", Monday: "Kwadwo", Tuesday: "Kwabena", Wednesday: "Kwaku", Thurday: "Yaw", Friday: "Kofi", Saturday: "Kwame"};
+var akanF = {Sunday: "Akosua", Monday: "Adwoa", Tuesday: "Abenaa", Wednesday: "Akua", Thurday: "Yaa", Friday: "Afua", Saturday: "Ama"};
 
-function validateForm() {
+function userEntries() {
     var gender = document.getElementsByName("gender");
     var mdate = document.getElementById("day");
     var mmonth = document.getElementById("month");
@@ -12,7 +12,7 @@ function validateForm() {
 
     if (mdate.value == "" || mdate.value == null) {
         document.getElementById("dob").innerHTML = "Day Required";
-        document.getElementById("dob").style.color = "red";
+        document.getElementById("dob").style.color = "";
         mdate.style.border = "2px solid red";
         return false;
     } else {
@@ -130,7 +130,7 @@ function dayOfWkCal() {
     var m = month + 12 * a - 2;
     dayOfWk = (day + y + Math.floor(y / 4) - Math.floor(y / 100) +
         Math.floor(year / 400) + Math.floor((31 * m) / 12)) % 7;
-    var myDay = daysOfWeek[dayOfWk];
+    var myDay = daysArr[dayOfWk];
     return myDay;
 }
 function getAkanName() {
@@ -138,17 +138,17 @@ function getAkanName() {
     var gender = userDetailsObj.gender;
     var dayOfBirth = dayOfWkCal();
     if (gender === "male") {
-        for (var akanKey in maleAkanNames) {
-            if (maleAkanNames.hasOwnProperty(akanKey)) {
+        for (var akanKey in akanM) {
+            if (akanM.hasOwnProperty(akanKey)) {
                 if (akanKey === dayOfBirth)
-                    myAkanName = maleAkanNames[akanKey];
+                    myAkanName = akanM[akanKey];
             }
         }
     } else if (gender === "female") {
-        for (var akanKey in femaleAkanNames) {
-            if (femaleAkanNames.hasOwnProperty(akanKey)) {
+        for (var akanKey in akanF) {
+            if (akanF.hasOwnProperty(akanKey)) {
                 if (akanKey === dayOfBirth)
-                    myAkanName = femaleAkanNames[akanKey];
+                    myAkanName = akanF[akanKey];
             }
         }
 
@@ -159,9 +159,9 @@ function getAkanName() {
 }
 
 function aggregateMyFunctions() {
-    var isValid = validateForm();
+    var isValid = userEntries();
     if (!isValid) {
-        validateForm();
+        userEntries();
         return false;
     } else {
         getUserDetails();
