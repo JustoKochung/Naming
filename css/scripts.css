@@ -3,9 +3,6 @@
   color: blueviolet;
   margin-top: 40px;
 }
-body{
-  background-color: #c8dad3;
-}
 h1{
   color: #ffffff;
 }
@@ -23,7 +20,7 @@ h1{
   background-image: url('https://cocoafromghana.org/wp-content/uploads/2017/01/Instagram_CFG_GHANA_week-namen_01-female-z-kader.jpg');
   background-size: center;
   height: 670px;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px 10px;
   margin: 0;
 }
 .overlay{
@@ -60,7 +57,7 @@ h1{
   margin-top: 20px;
   height: 45px;
   width: 200px;
-  border-radius: 20px;
+  border-radius: 30px;
 }
 .q-text{
   color: #fdd043;
@@ -72,7 +69,4 @@ h1{
   margin-top: 30px;
   color: #000000;
   font-size: 28px;
-}
-.rounded-circle{
-  margin-left: 40%;
 }
