@@ -26,8 +26,8 @@ function validateForm() {
                 mdate.style.border = "2px solid red";
                 return false;
             } else {
-                document.getElementById("dob").innerHTML = "Date Ok!";
-                document.getElementById("dob").style.color = "green";
+                document.getElementById("dob").innerHTML = "";
+                document.getElementById("dob").style.color = "";
                 mdate.style.border = "2px solid green";
             }
         } else {
@@ -54,8 +54,8 @@ function validateForm() {
                 mmonth.style.border = "2px solid red";
                 return false;
             } else {
-                document.getElementById("mmonth").innerHTML = "Month Ok!";
-                document.getElementById("mmonth").style.color = "green";
+                document.getElementById("mmonth").innerHTML = "";
+                document.getElementById("mmonth").style.color = "";
                 mmonth.style.border = "2px solid green";
             }
         } else {
@@ -79,13 +79,13 @@ function validateForm() {
                 myear.style.border = "2px solid red";
                 return false;
             } else {
-                document.getElementById("myear").innerHTML = "Year Ok!";
-                document.getElementById("myear").style.color = "green";
+                document.getElementById("myear").innerHTML = "";
+                document.getElementById("myear").style.color = "";
                 myear.style.border = "2px solid green";
             }
         } else {
             document.getElementById("myear").innerHTML = "Year must be a Number";
-            document.getElementById("myear").style.color = "red";
+            document.getElementById("myear").style.color = "";
             myear.style.border = "2px solid red";
             return false;
         }
@@ -93,14 +93,14 @@ function validateForm() {
     while (!formValid && i < gender.length) {
         if (gender[i].checked) {
             // mgender = gender[i].value;
-            document.getElementById("legend").style.color = "green";
-            document.getElementById("legend").innerHTML = "Gender Ok!";
+            document.getElementById("legend").style.color = "";
+            document.getElementById("legend").innerHTML = "";
             formValid = true;
         }
         i++;
     }
     if (!formValid) {
-        document.getElementById("legend").style.color = "red";
+        document.getElementById("legend").style.color = "";
         return false;
     }
     return formValid;
