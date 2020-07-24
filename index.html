@@ -11,15 +11,17 @@
 </head>
 
 <body>
-    <div class="container">
-        <h3>Know your Birthday's day of the week</h3>
-        <p>Know the day of the week you were born by filling in your details. Heard of Ghanaian Akan names? 
-        </p>
-        <p>The Akan people of Ghana frequently name their children after the day of the 
-            week they were born and the order in which they were born. 
-            These "day names" have further meanings concerning the soul 
-            and character of the person.What would yours be?</p>
-        <form onsubmit="return aggregateMyFunctions()">
+    <div class="container-fluid">
+      <div class="jumbotron parent">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="jumbotron p-0 left">
+              <div class="overlay">
+              <h3>Akan</h3>
+               <p>The Akan people of Ghana frequently name their children after the day of the week they were born and the order in which they were born.</p>
+              </div>
+          </div>
+            <form onsubmit="return aggregateMyFunctions()">
             <div class="container">
                 <div class="col clo-12">
                     <h4>Input Date of Birth</h4>
@@ -65,9 +67,11 @@
                         <button type="submit" class="btn btn-primary" id="button">Submit</button>
                     </div>
                     <div id="results"></div>
-
-        </form>
-        </div>
+                </form>
+              </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <script src="js/scripts.js"></script>
